@@ -23,7 +23,7 @@ export default function Homepage() {
         <div className="introdution flex ml-11 items-center h-screen w-screen justify-between">
           <div className="greet">
             <div className="textGreet mb-14 text-4xl">
-              <h1 className="im font-bold">I'M</h1>
+              <h1 className="im font-bold">I&apos;M</h1>
               <h1 className="text-white">
                 <span className="text-white font-semibold ">Fullstack </span>
                 Development
