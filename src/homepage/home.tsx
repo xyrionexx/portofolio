@@ -1,5 +1,5 @@
 "use client";
-import next from "next";
+
 import "./homepage.css";
 import Image from "next/image";
 
@@ -8,7 +8,14 @@ export default function Homepage() {
     <>
       <div id="home" className="heroPage h-screen w-screen flex ">
         <div className="leftSide h-screen w-30 flex items-center flex-col relative">
-          <Image className="logo h-14 w-16 mt-1" src="/logo.png" alt="" />
+          <Image
+            className="logo h-14 w-16 mt-1"
+            src="/logo.png"
+            alt=""
+            width={150}
+            height={150}
+            style={{ objectFit: "cover" }}
+          />
           <div className="tagline absolute ">
             <h2>PEMULA</h2>
           </div>
