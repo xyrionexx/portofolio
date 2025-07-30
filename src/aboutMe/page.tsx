@@ -1,3 +1,5 @@
+"use client";
+
 import "./aboutMe.css";
 
 export default function AboutMe() {

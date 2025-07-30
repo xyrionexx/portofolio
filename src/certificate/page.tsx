@@ -1,3 +1,4 @@
+"use client";
 import "./certificate.css";
 
 export default function Certificate() {

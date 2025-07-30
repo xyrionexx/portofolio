@@ -1,3 +1,5 @@
+"use client";
+
 import "./homepage.css";
 
 export default function Homepage() {
