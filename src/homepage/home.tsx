@@ -26,7 +26,7 @@ export default function Homepage() {
               <h1 className="im font-bold">I&apos;M</h1>
               <h1 className="text-white">
                 <span className="text-white font-semibold ">Fullstack </span>
-                Development
+                Developer
               </h1>
             </div>
             <h2 className="slogan text-6xl">TECHNOLOGY</h2>
