@@ -5,6 +5,7 @@ import "./project.css";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github } from "lucide-react";
+import Image from "next/image";
 
 import {
   Card,
@@ -14,6 +15,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
+import { Imprima } from "next/font/google";
 
 export default function Project() {
   const projects = [
@@ -66,10 +68,13 @@ export default function Project() {
                 className="group hover:shadow-lg transition-all duration-300 hover:scale-105 bg-stone-100  "
               >
                 <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 rounded-t-lg flex items-center justify-center">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover rounded-t-lg"
+                    width={150}
+                    height={150}
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
                 <CardHeader>

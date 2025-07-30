@@ -1,6 +1,7 @@
 "use client";
 
 import "./homepage.css";
+import Image from "next/image";
 
 export default function Homepage() {
   return (
@@ -39,7 +40,13 @@ export default function Homepage() {
           </div>
 
           <div className="photoProfile  h-screen flex justify-center items-center ">
-            <img src="/pp.png" alt="" />
+            <Image
+              src="/pp.png"
+              alt=""
+              width={150}
+              height={150}
+              style={{ objectFit: "cover" }}
+            />
           </div>
         </div>
       </div>

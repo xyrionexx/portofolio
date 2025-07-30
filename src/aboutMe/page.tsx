@@ -1,6 +1,7 @@
 "use client";
 
 import "./aboutMe.css";
+import Image from "next/image";
 
 export default function AboutMe() {
   return (
@@ -10,7 +11,13 @@ export default function AboutMe() {
         className="aboutMe flex justify-between w-screen h-screen items-center gap-28 mb-20 flex-wrap"
       >
         <div className="profileAboutMe">
-          <img src="/pp.png" alt="" />
+          <Image
+            src="/pp.png"
+            alt="Profile picture"
+            width={150}
+            height={150}
+            style={{ objectFit: "cover" }}
+          />
         </div>
         <div className="descAboutMe">
           <div className="introdutionAboutMe flex flex-col gap-2">
@@ -35,10 +42,13 @@ export default function AboutMe() {
               <li>
                 <i>
                   <a href="https://www.instagram.com/xyrionex/">
-                    <img
+                    <Image
                       className="iconSosialMedia w-14"
                       src="/ig.png"
                       alt=""
+                      width={150}
+                      height={150}
+                      style={{ objectFit: "cover" }}
                     />
                   </a>
                 </i>
@@ -46,10 +56,13 @@ export default function AboutMe() {
               <li>
                 <i>
                   <a href="https://github.com/adit-hidayat">
-                    <img
+                    <Image
                       className="iconSosialMedia w-14"
                       src="/github.png"
                       alt=""
+                      width={150}
+                      height={150}
+                      style={{ objectFit: "cover" }}
                     />
                   </a>
                 </i>
@@ -57,10 +70,13 @@ export default function AboutMe() {
               <li>
                 <i>
                   <a href="">
-                    <img
+                    <Image
                       className="iconSosialMedia w-14"
                       src="/linkedin.png"
                       alt=""
+                      width={150}
+                      height={150}
+                      style={{ objectFit: "cover" }}
                     />
                   </a>
                 </i>
