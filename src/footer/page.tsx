@@ -27,7 +27,7 @@ export default function Footer() {
         {/* Social Links */}
         <div className="flex justify-center gap-4 mb-6">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/xyrionexx"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 hover:text-blue-400 transition-colors"

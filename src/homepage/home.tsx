@@ -31,19 +31,21 @@ export default function Homepage() {
             </div>
             <h2 className="slogan text-6xl">TECHNOLOGY</h2>
             <button className="text-white buttonAboutMe w-50  items-center mt-14 flex gap-1">
-              ABOUT ME
-              <span>
-                <i className="iconAboutMe">
-                  <Image
-                    src="/nextButton.svg"
-                    alt=""
-                    width={150}
-                    height={150}
-                    style={{ objectFit: "cover" }}
-                    className="rounded-full"
-                  />
-                </i>
-              </span>
+              <a href="#aboutme" className="flex items-center gap-1">
+                ABOUT ME
+                <span>
+                  <i className="iconAboutMe">
+                    <Image
+                      src="/nextButton.svg"
+                      alt=""
+                      width={150}
+                      height={150}
+                      style={{ objectFit: "cover" }}
+                      className="rounded-full"
+                    />
+                  </i>
+                </span>
+              </a>
             </button>
           </div>
         </div>
