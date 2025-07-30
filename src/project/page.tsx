@@ -13,17 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Linkedin,
-  Mail,
-  ExternalLink,
-  Code,
-  Database,
-  Server,
-  Smartphone,
-  ChevronDown,
-  Send,
-} from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export default function Project() {
   const projects = [
