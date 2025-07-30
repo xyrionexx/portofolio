@@ -78,8 +78,8 @@
 }
 
 @media (max-width: 850px) {
-    .aboutMe{
-    }
+    /* .aboutMe{
+    } */
 
     .profileAboutMe {
         display: flex;
@@ -96,8 +96,8 @@
 
     }
 
-    .introdutionAboutMe{
-    }
+    /* .introdutionAboutMe{
+    } */
 
     .profileAboutMe img {
         width: 60vw;
