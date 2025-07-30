@@ -2,8 +2,56 @@
 
 import "./homepage.css";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Homepage() {
+  const texts = [
+    "Fullstack Developer",
+    "Frontend Developer",
+    "Backend Developer",
+  ];
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const fullText = texts[currentTextIndex];
+
+      if (isDeleting) {
+        setCurrentText(fullText.substring(0, currentText.length - 1));
+        setTypingSpeed(75);
+      } else {
+        setCurrentText(fullText.substring(0, currentText.length + 1));
+        setTypingSpeed(150);
+      }
+
+      if (!isDeleting && currentText === fullText) {
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && currentText === "") {
+        setIsDeleting(false);
+        setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentTextIndex, texts, typingSpeed]);
+
+  // Split text to highlight the role part
+  const getDisplayText = () => {
+    const words = currentText.split(" ");
+    if (words.length === 2) {
+      return (
+        <>
+          <span className="text-white font-semibold">{words[0]} </span>
+          {words[1]}
+        </>
+      );
+    }
+    return currentText;
+  };
   return (
     <>
       <div id="home" className="heroPage h-screen w-screen flex ">
@@ -24,9 +72,9 @@ export default function Homepage() {
           <div className="greet">
             <div className="textGreet mb-14 text-4xl">
               <h1 className="im font-bold">I&apos;M</h1>
-              <h1 className="text-white">
-                <span className="text-white font-semibold ">Fullstack </span>
-                Developer
+              <h1 className="text-white text-3xl md:text-6xl font-normal">
+                {getDisplayText()}
+                <span className="animate-pulse text-white">|</span>
               </h1>
             </div>
             <h2 className="slogan text-6xl">TECHNOLOGY</h2>
