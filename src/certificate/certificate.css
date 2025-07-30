@@ -1,12 +1,12 @@
 .certificate-card {
-  @apply  rounded-2xl transition-transform duration-300 hover:scale-105;
-  border: 2px solid #948979;
+  /* @apply  rounded-2xl transition-transform duration-300 hover:scale-105; */
+  /* border: 2px solid #948979; */
   width: 100%;
   max-width: 320px;
 }
 
 .certificate-image {
-  @apply rounded-lg w-full h-auto;
+  /* @apply rounded-lg w-full h-auto; */
   aspect-ratio: 4 / 3;
   object-fit: cover;
   min-height: 200px;
