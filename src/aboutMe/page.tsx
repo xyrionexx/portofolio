@@ -25,7 +25,7 @@ export default function AboutMe() {
               ABOUT ME
             </h1>
             <h1 className="text-white  textHello text-6xl font-black">
-              Hello, I'm Adit
+              Hello, I&apos;m Adit
             </h1>
             <h1 className=" rahmat text-6xl font-black mb-3">Rahmat</h1>
             <p className="line mb-4"></p> {/* line */}
