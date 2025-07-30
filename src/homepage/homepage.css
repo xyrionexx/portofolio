@@ -62,7 +62,7 @@
     left: 65;
     z-index: -2;
     position: absolute;
-    border-radius: 1000;
+    border-radius: 1000px;
     width: 440px;
     height: 440px;
     border: 2px solid #948979;
