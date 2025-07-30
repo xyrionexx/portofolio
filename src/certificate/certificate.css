@@ -1,0 +1,46 @@
+.certificate-card {
+  @apply p-3 rounded-2xl transition-transform duration-300 hover:scale-105;
+  border: 2px solid #948979;
+  width: 100%;
+  max-width: 320px;
+}
+
+.certificate-image {
+  @apply rounded-lg w-full h-auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  min-height: 200px;
+  max-height: 280px;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 640px) {
+  .certificate-card {
+    max-width: 280px;
+  }
+
+  .certificate-image {
+    min-height: 180px;
+    max-height: 220px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .certificate-card {
+    max-width: 300px;
+  }
+
+  .certificate-image {
+    min-height: 200px;
+    max-height: 250px;
+  }
+}
+
+/* Large screen adjustments */
+@media (min-width: 1025px) {
+  .certificate-image {
+    min-height: 220px;
+    max-height: 280px;
+  }
+}

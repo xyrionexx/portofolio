@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Splash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+3D&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+.aboutMe{
+    padding: 0px 6vw 0px 6vw;
+}
+
+.profileAboutMe{
+    width: 40vw;
+    height: auto;
+
+}
+
+.profileAboutMe img{
+    width: 60vw;
+    height: 80vh;
+    border-radius: 1000;
+}
+
+.descAboutMe{
+    width: 40vw;
+}
+
+.introdutionAboutMe{
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.textAboutMe{
+    color: #dfd0b87a ;
+
+}
+
+
+.rahmat{
+    color: #DFD0B8;
+}
+
+
+.name{
+    font-family: "Splash", cursive;
+    color: #dfd0b87a ;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media (max-width: 1400px) {
+    .profileAboutMe {
+        width: 35vw;
+    }
+
+    .profileAboutMe img {
+        height: 60vh;
+    }
+
+    .textHello{
+        font-size: 3vw;
+    }
+
+    .textAboutMe{
+        font-size: 3vw;
+    }
+    .rahmat{
+        font-size: 3.5vw;
+    }
+
+    .name{
+        font-size: 4vw;
+    }
+
+    .iconSosialMedia{
+        width: 5vw;
+
+    }
+}
+
+@media (max-width: 850px) {
+    .aboutMe{
+    }
+
+    .profileAboutMe {
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .descAboutMe{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        margin-top: -20vw;
+
+    }
+
+    .introdutionAboutMe{
+    }
+
+    .profileAboutMe img {
+        width: 60vw;
+        height: 40vh;
+        margin-top: 5vw;
+    }
+
+    .descAbooutProfile{
+        width: 80vw;
+    }
+
+    .textHello{
+        font-size: 4.5vw;
+    }
+
+    .textAboutMe{
+        font-size: 5vw;
+    }
+    .rahmat{
+        font-size: 4.5vw;
+    }
+
+    .name{
+        font-size: 5vw;
+    }
+    .iconSosialMedia{
+        width: 7vw;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+  .profileAboutMe img {
+        width: 80vw;
+        height: 40vh;
+        margin-top: 5vw;
+    }
+
+     .textHello{
+        font-size: 5vw;
+    }
+
+    .textAboutMe{
+        font-size: 6vw;
+    }
+    .rahmat{
+        font-size: 5vw;
+    }
+
+    .name{
+        font-size: 7vw;
+    }
+    .iconSosialMedia{
+        width: 8vw;
+    }
+ 
+
+}
+

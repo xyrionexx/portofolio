@@ -1,0 +1,110 @@
+
+
+.leftSide{
+    border-right: 1px solid #dfd0b862;
+}
+.tagline{
+    color: #948979;
+    top: 50%;
+    transform: rotate(270deg);
+    font-size: 1.1vw;
+}
+
+.im{
+    color: #dfd0b87a ;
+}
+
+.slogan{
+    color: #dfd0b87a ;
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.iconAboutMe img{
+    border-radius: 100;
+    width: 35px;
+    background-color: #DFD0B8;
+}
+
+.rightSide{
+    z-index: -1;
+    width: 70vw;
+    height: 100vh;
+    background-color: #393e46bd ;
+   
+}
+
+
+.textCreator{
+    bottom: 300;
+    left: -290;
+    transform: rotate(270deg);
+    position: absolute;
+
+}
+
+.by{
+    color: #dfd0b87a ;
+
+}
+
+.creator{
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+.photoProfile img{
+    top: 50;
+    left: 65;
+    z-index: -2;
+    position: absolute;
+    border-radius: 1000;
+    width: 440px;
+    height: 440px;
+    border: 2px solid #948979;
+    padding: 1vw;
+    margin-top: 4vh;
+    margin-left: 1vw;
+
+}
+
+
+@media (max-width: 1340px) {
+    .photoProfile img{
+        width: 380px;
+        height: 380px;
+        border: 2px solid #948979;
+        margin-top: 10vh;
+        padding: 1vw;
+    }
+}
+
+@media (max-width: 1200px) {
+    .rightSide{
+        display: none;
+    }
+ 
+}
+
+@media (max-width: 800px) {
+    .textGreet h1{
+        font-size: 5.5vw;
+
+    }
+    .slogan{
+        font-size: 7vw;
+    }
+    .leftSide{
+        width: 20vw;
+        
+    }
+    .logo{
+        width: 10vw;
+        height: 8vh;
+    }
+ 
+}
