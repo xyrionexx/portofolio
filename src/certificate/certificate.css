@@ -1,5 +1,5 @@
 .certificate-card {
-  @apply p-3 rounded-2xl transition-transform duration-300 hover:scale-105;
+  @apply  rounded-2xl transition-transform duration-300 hover:scale-105;
   border: 2px solid #948979;
   width: 100%;
   max-width: 320px;
