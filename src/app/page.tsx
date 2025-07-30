@@ -1,7 +1,4 @@
-import Image from "next/image";
-import { Icon } from "@iconify/react";
 import "./index.css";
-import img from "/logo.png";
 import Navbar from "@/navbar/page";
 import Homepage from "@/homepage/home";
 import AboutMe from "@/aboutMe/page";

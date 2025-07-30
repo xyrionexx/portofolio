@@ -15,7 +15,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
-import { Imprima } from "next/font/google";
 
 export default function Project() {
   const projects = [
