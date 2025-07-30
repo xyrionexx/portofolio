@@ -52,7 +52,7 @@ export default function Homepage() {
             <h1 className="creator text-9xl text-white">xyrionex</h1>
           </div>
 
-          <div className="photoProfile  h-screen flex justify-center items-center ">
+          <div className="photoProfile  h-screen flex justify-center items-center rounded-full ">
             <Image
               src="/pp.png"
               alt=""
