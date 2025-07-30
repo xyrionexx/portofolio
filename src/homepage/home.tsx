@@ -60,8 +60,8 @@ export default function Homepage() {
             className="logo h-14 w-16 mt-1"
             src="/logo.png"
             alt=""
-            width={150}
-            height={150}
+            width={115}
+            height={115}
             style={{ objectFit: "cover" }}
           />
           <div className="tagline absolute ">
@@ -78,11 +78,14 @@ export default function Homepage() {
               </h1>
             </div>
             <h2 className="slogan text-6xl">TECHNOLOGY</h2>
-            <button className="text-white buttonAboutMe w-50  items-center mt-14 flex gap-1">
-              <a href="#aboutme" className="flex items-center gap-1">
+            <button className="text-white buttonAboutMe w-50   items-center mt-14 flex gap-1">
+              <a
+                href="#aboutme"
+                className="flex items-center gap-1  transition-transform delay-200   hover:text-stone-500"
+              >
                 ABOUT ME
-                <span>
-                  <i className="iconAboutMe">
+                <span className=" hover:rotate-[360deg] transition-transform delay-200">
+                  <i className="iconAboutMe ">
                     <Image
                       src="/nextButton.svg"
                       alt=""
