@@ -2,7 +2,10 @@ import "./certificate.css";
 
 export default function Certificate() {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center pt-20 px-4">
+    <div
+      id="certificate"
+      className=" min-h-screen w-full flex flex-col items-center pt-20 px-4"
+    >
       <div className="titleCertificate mb-8 md:mb-12">
         <h2
           className="text-3xl md:text-4xl lg:text-5xl font-black text-center"
