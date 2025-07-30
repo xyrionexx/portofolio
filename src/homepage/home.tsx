@@ -40,6 +40,7 @@ export default function Homepage() {
                     width={150}
                     height={150}
                     style={{ objectFit: "cover" }}
+                    className="rounded-full"
                   />
                 </i>
               </span>

@@ -55,7 +55,7 @@ export default function AboutMe() {
               </li>
               <li>
                 <i>
-                  <a href="https://github.com/adit-hidayat">
+                  <a href="https://github.com/xyrionexx">
                     <Image
                       className="iconSosialMedia w-14"
                       src="/github.png"
