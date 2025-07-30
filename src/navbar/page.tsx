@@ -54,6 +54,14 @@ export default function Navbar() {
     link.click();
     document.body.removeChild(link);
   };
+  const handleDownloadMobile = () => {
+    const link = document.createElement("a");
+    link.href = "/assets/CV.pdf"; // path file di folder public
+    link.download = "CV-Adit.pdf"; // nama file saat diunduh
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <>
@@ -173,6 +181,7 @@ export default function Navbar() {
             {/* Mobile CV Button */}
             <div className="pt-4 border-t border-gray-200 mt-4">
               <button
+                onClick={handleDownloadMobile}
                 className={`w-full bg-[#948979] text-white px-6 py-3 rounded-full text-base font-medium hover:bg-[#7a6f5f] transition-all duration-200 flex items-center justify-center gap-2 hover:shadow-lg ${
                   isMenuOpen
                     ? "translate-x-0 opacity-100"
@@ -184,7 +193,6 @@ export default function Navbar() {
                     : "0ms",
                 }}
               >
-                <Download className="h-4 w-4" />
                 Download CV
               </button>
             </div>
