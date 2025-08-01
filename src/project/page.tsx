@@ -42,6 +42,7 @@ export default function Project() {
       tech: ["HTML", "JavaScript", "Web Socket", "IOT"],
       image: "/assets/smartbin.jpg",
       github: "https://github.com/mee-i/smartbin",
+      demo: "https://smartbin.cludz.net",
     },
   ];
   return (
