@@ -54,7 +54,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-gray-400 text-sm">
-          © {new Date().getFullYear()} Adit Rahmat Hidayat. All rights reserved.
+          © {new Date().getFullYear()} Adit Rahmat Hidayat. Program Use Next.js.
         </div>
       </div>
     </footer>

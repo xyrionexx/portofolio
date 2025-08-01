@@ -25,7 +25,6 @@ export default function Project() {
       tech: ["Next.js", "Node.js", "Mysql", "TypeScript", "Tailwind"],
       image: "/assets/cryproInfo.png",
       github: "https://github.com/xyrionexx/cryptoInfo",
-      demo: "#",
     },
     {
       title: "Metronexus",
@@ -43,7 +42,6 @@ export default function Project() {
       tech: ["HTML", "JavaScript", "Web Socket", "IOT"],
       image: "/assets/smartbin.jpg",
       github: "https://github.com/mee-i/smartbin",
-      demo: "#",
     },
   ];
   return (
