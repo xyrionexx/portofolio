@@ -20,7 +20,16 @@
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
+  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .clip-path-wing-left {
+    clip-path: polygon(0% 0%, 100% 30%, 100% 70%, 0% 100%, 20% 50%);
+  }
+  .clip-path-wing-right {
+    clip-path: polygon(100% 0%, 0% 30%, 0% 70%, 100% 100%, 80% 50%);
+  }
 }

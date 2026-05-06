@@ -43,7 +43,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black font-mono"
+      className="fixed inset-0 z-9999 bg-black flex flex-col items-center justify-center overflow-hidden font-mono"
     >
       {/* Mario-style Pixel Blocks */}
       <div className="flex gap-2 mb-8">
