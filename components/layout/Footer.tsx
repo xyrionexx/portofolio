@@ -34,7 +34,7 @@ export default function Footer() {
                 <span>HP [EXPERIENCE]</span>
                 <span>100%</span>
               </div>
-              <div className="h-1.5 w-full bg-zinc-900 border border-zinc-800 p-[1px]">
+              <div className="h-1.5 w-full bg-zinc-900 border border-zinc-800 p-px">
                 <div className="h-full w-full bg-white opacity-80 shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
               </div>
             </div>
@@ -44,7 +44,7 @@ export default function Footer() {
                 <span>MP [CREATIVITY]</span>
                 <span>MAX</span>
               </div>
-              <div className="h-1.5 w-full bg-zinc-900 border border-zinc-800 p-[1px]">
+              <div className="h-1.5 w-full bg-zinc-900 border border-zinc-800 p-px">
                 <div className="h-full w-[85%] bg-zinc-500 shadow-[0_0_8px_rgba(113,113,122,0.3)]" />
               </div>
             </div>
@@ -60,7 +60,7 @@ export default function Footer() {
                 { name: "ABOUT_ME", link: "#about" },
                 { name: "TECH_OPS", link: "#tech" },
                 { name: "WORK_ARCHIVE", link: "#work" },
-                { name: "SOCIAL_MATRIX", link: "/socials" }
+                { name: "SOCIAL_MATRIX", link: "#socials" }
               ].map((item) => (
                 <a key={item.name} href={item.link} className="text-xs text-zinc-400 hover:text-white transition-colors flex items-center gap-3 group">
                   <span className="w-1 h-1 bg-zinc-800 group-hover:bg-white transition-colors" />
@@ -87,10 +87,20 @@ export default function Footer() {
           </motion.button>
 
           <div className="flex gap-6">
-            {["GH", "IG", "LI", "DS"].map((social) => (
-              <div key={social} className="w-10 h-10 border border-zinc-900 flex items-center justify-center text-[10px] text-zinc-600 hover:border-zinc-500 hover:text-white transition-all cursor-pointer font-mono">
-                {social}
-              </div>
+            {[
+              { label: "GH", link: "https://github.com/xyrionexx" },
+              { label: "IG", link: "https://www.instagram.com/xyrionex/" },
+              { label: "LI", link: "https://www.linkedin.com/in/adit-rahmat-15336b388/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bn50cnZRbTYaVjuM8qcz%2FyQ%3D%3D" }
+            ].map((social) => (
+              <a 
+                key={social.label} 
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-zinc-900 flex items-center justify-center text-[10px] text-zinc-600 hover:border-zinc-500 hover:text-white transition-all cursor-pointer font-mono"
+              >
+                {social.label}
+              </a>
             ))}
           </div>
         </div>

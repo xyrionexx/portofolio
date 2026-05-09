@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isTechOpen, setIsTechOpen] = useState(false);
@@ -14,12 +16,12 @@ export default function Navbar() {
       className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-8 md:px-12 md:py-10"
     >
       <div className="flex gap-8 text-[10px] md:text-xs tracking-[0.3em] uppercase font-medium text-zinc-400">
-        <a
-          href="#about"
+        <Link
+          href="/#about"
           className="hover:text-white transition-colors duration-300"
         >
           About
-        </a>
+        </Link>
         
         {/* Tech Dropdown Container */}
         <div 
@@ -28,7 +30,7 @@ export default function Navbar() {
           onMouseLeave={() => setIsTechOpen(false)}
         >
           <button className="hover:text-white transition-colors duration-300 flex items-center gap-2 uppercase tracking-[0.3em]">
-            Tech
+            Work
             <span className={`text-[8px] transition-transform duration-300 ${isTechOpen ? 'rotate-180' : ''}`}>▼</span>
           </button>
 
@@ -46,20 +48,20 @@ export default function Navbar() {
                 <div className="absolute bottom-0 right-0 w-1 h-1 border-r border-b border-white" />
                 
                 <div className="flex flex-col gap-1">
-                  <a
-                    href="#tech"
+                  <Link
+                    href="/#tech"
                     className="px-4 py-3 text-[9px] tracking-[0.2em] text-zinc-500 hover:text-black hover:bg-white transition-all duration-200 uppercase flex justify-between items-center group"
                   >
                     [ TECH_OPS ]
                     <span className="opacity-0 group-hover:opacity-100">▶</span>
-                  </a>
-                  <a
-                    href="#work"
+                  </Link>
+                  <Link
+                    href="/#work"
                     className="px-4 py-3 text-[9px] tracking-[0.2em] text-zinc-500 hover:text-black hover:bg-white transition-all duration-200 uppercase flex justify-between items-center group"
                   >
                     [ WORK_ARCHIVE ]
                     <span className="opacity-0 group-hover:opacity-100">▶</span>
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             )}
@@ -68,22 +70,22 @@ export default function Navbar() {
       </div>
 
       <div className="text-xs md:text-sm tracking-[0.5em] uppercase font-bold text-white">
-        <a href="/">XYRIONEXX</a>
+        <Link href="/">XYRIONEXX</Link>
       </div>
 
       <div className="flex gap-8 text-[10px] md:text-xs tracking-[0.3em] uppercase font-medium text-zinc-400">
-        <a
-          href="/socials"
+        <Link
+          href="/#socials"
           className="hover:text-white transition-colors duration-300"
         >
           Socials
-        </a>
-        <a
-          href="#contact"
+        </Link>
+        <Link
+          href="/#contact"
           className="hover:text-white transition-colors duration-300"
         >
           Contact
-        </a>
+        </Link>
       </div>
     </motion.nav>
   );

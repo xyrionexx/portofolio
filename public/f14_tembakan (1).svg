@@ -1,0 +1,134 @@
+<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Laser Shot Monochrome</title>
+  <desc>Animasi tembakan laser monokrom putih dengan efek muzzle flash</desc>
+
+  <style>
+    @keyframes shoot {
+      0%          { transform: translateX(0);    opacity:1; }
+      78%         { transform: translateX(290px); opacity:1; }
+      79%,100%    { transform: translateX(290px); opacity:0; }
+    }
+    @keyframes shoot2 {
+      0%,38%      { transform: translateX(0);    opacity:0; }
+      39%         { opacity:1; }
+      93%         { transform: translateX(260px); opacity:1; }
+      94%,100%    { opacity:0; }
+    }
+    @keyframes muzzle {
+      0%,45%  { opacity:0; transform:scale(0.2); }
+      48%     { opacity:1; transform:scale(1); }
+      55%     { opacity:0; transform:scale(0.5); }
+      100%    { opacity:0; }
+    }
+    @keyframes muzzle2 {
+      0%,5%   { opacity:0; transform:scale(0.2); }
+      8%      { opacity:1; transform:scale(1); }
+      15%     { opacity:0; transform:scale(0.5); }
+      100%    { opacity:0; }
+    }
+    @keyframes explode {
+      0%,3%   { opacity:0; transform:scale(0.1); }
+      15%     { opacity:1; transform:scale(1); }
+      78%     { opacity:1; transform:scale(1.4); }
+      79%,100%{ opacity:0; transform:scale(0); }
+    }
+    @keyframes explode2 {
+      0%,41%  { opacity:0; transform:scale(0.1); }
+      53%     { opacity:1; transform:scale(1); }
+      93%     { opacity:1; transform:scale(1.4); }
+      94%,100%{ opacity:0; transform:scale(0); }
+    }
+    @keyframes trail {
+      0%         { stroke-dashoffset: 300; opacity:0.6; }
+      78%        { stroke-dashoffset: 0;   opacity:0.1; }
+      79%,100%   { opacity:0; }
+    }
+    @keyframes trail2 {
+      0%,38%     { stroke-dashoffset: 300; opacity:0; }
+      39%        { opacity:0.6; }
+      93%        { stroke-dashoffset: 0;   opacity:0.1; }
+      94%,100%   { opacity:0; }
+    }
+  </style>
+
+
+
+  <!-- Grid lines subtle background -->
+
+
+  <!-- Origin marker (gun barrel tip) -->
+
+
+  <!-- === SHOT 1 === -->
+  <!-- Trail -->
+  <line x1="30" y1="60" x2="320" y2="60"
+    stroke="#fff" stroke-width="1" opacity="0.3"
+    stroke-dasharray="290" stroke-dashoffset="290"
+    style="animation: trail 2s linear infinite;"/>
+  <!-- Bullet -->
+  <g style="animation: shoot 2s linear infinite; transform-origin: 30px 60px;">
+    <rect x="30" y="57.5" width="46" height="5" rx="2.5" fill="#fff" opacity="0.95"/>
+    <rect x="30" y="59"   width="46" height="2" rx="1"   fill="#eee" opacity="0.5"/>
+    <!-- Glow head -->
+
+  </g>
+  <!-- Muzzle flash 1 (on second shot timing) -->
+  <g style="animation: muzzle 2s ease-out infinite; transform-origin: 30px 60px;">
+
+    <line x1="30" y1="52" x2="30" y2="46" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+    <line x1="30" y1="68" x2="30" y2="74" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+    <line x1="38" y1="56" x2="43" y2="51" stroke="#fff" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+    <line x1="38" y1="64" x2="43" y2="69" stroke="#fff" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <!-- Impact explosion 1 -->
+  <g style="animation: explode 2s ease-out infinite; transform-origin: 320px 60px;">
+
+    <circle cx="320" cy="60" r="4"  fill="#fff" opacity="0.7"/>
+    <circle cx="320" cy="60" r="2"  fill="#fff" opacity="1"/>
+    <line x1="320" y1="48" x2="320" y2="42" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="320" y1="72" x2="320" y2="78" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="308" y1="60" x2="302" y2="60" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="332" y1="60" x2="338" y2="60" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+    <line x1="312" y1="50" x2="307" y2="45" stroke="#aaa" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+    <line x1="328" y1="50" x2="333" y2="45" stroke="#aaa" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+    <line x1="312" y1="70" x2="307" y2="75" stroke="#aaa" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+    <line x1="328" y1="70" x2="333" y2="75" stroke="#aaa" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- === SHOT 2 (offset) === -->
+  <!-- Trail -->
+  <line x1="30" y1="60" x2="320" y2="60"
+    stroke="#fff" stroke-width="1" opacity="0.3"
+    stroke-dasharray="290" stroke-dashoffset="290"
+    style="animation: trail2 2s linear infinite;"/>
+  <!-- Bullet -->
+  <g style="animation: shoot2 2s linear infinite; transform-origin: 30px 60px;">
+    <rect x="30" y="57.5" width="46" height="5" rx="2.5" fill="#fff" opacity="0.95"/>
+    <rect x="30" y="59"   width="46" height="2" rx="1"   fill="#eee" opacity="0.5"/>
+
+  </g>
+  <!-- Muzzle flash 2 -->
+  <g style="animation: muzzle2 2s ease-out infinite; transform-origin: 30px 60px;">
+
+    <line x1="30" y1="52" x2="30" y2="46" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+    <line x1="30" y1="68" x2="30" y2="74" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+    <line x1="38" y1="56" x2="43" y2="51" stroke="#fff" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+    <line x1="38" y1="64" x2="43" y2="69" stroke="#fff" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <!-- Impact explosion 2 -->
+  <g style="animation: explode2 2s ease-out infinite; transform-origin: 320px 60px;">
+
+    <circle cx="320" cy="60" r="4"  fill="#fff" opacity="0.7"/>
+    <circle cx="320" cy="60" r="2"  fill="#fff" opacity="1"/>
+    <line x1="320" y1="48" x2="320" y2="42" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="320" y1="72" x2="320" y2="78" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="308" y1="60" x2="302" y2="60" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="332" y1="60" x2="338" y2="60" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+    <line x1="312" y1="50" x2="307" y2="45" stroke="#aaa" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+    <line x1="328" y1="50" x2="333" y2="45" stroke="#aaa" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+    <line x1="312" y1="70" x2="307" y2="75" stroke="#aaa" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+    <line x1="328" y1="70" x2="333" y2="75" stroke="#aaa" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+
+</svg>

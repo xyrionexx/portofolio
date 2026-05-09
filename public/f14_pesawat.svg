@@ -1,0 +1,118 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>F-14 Tomcat White</title>
+  <desc>Silhouette pesawat tempur F-14 Tomcat warna putih minimalis</desc>
+
+  <style>
+    @keyframes fly {
+      0%,100%{ transform: translateY(0px); }
+      50%    { transform: translateY(-8px); }
+    }
+    @keyframes flame {
+      0%,100%{ transform: scaleX(1);   opacity:1; }
+      50%    { transform: scaleX(0.5); opacity:0.4; }
+    }
+    .ship      { animation: fly 4s ease-in-out infinite; transform-origin: 200px 100px; }
+    .flame-top { animation: flame 0.2s ease-in-out infinite;       transform-origin: 55px 88px; }
+    .flame-bot { animation: flame 0.2s ease-in-out infinite 0.1s;  transform-origin: 55px 112px; }
+  </style>
+
+
+
+  <g class="ship">
+    <!-- Engine nacelles -->
+    <rect x="55" y="83"  width="38" height="10" rx="2" fill="#ffffff" stroke="#aaa" stroke-width="0.5"/>
+    <rect x="55" y="107" width="38" height="10" rx="2" fill="#ffffff" stroke="#aaa" stroke-width="0.5"/>
+    <!-- Nozzle top -->
+    <polygon points="55,83 47,85 47,93 55,93"   fill="#ddd" stroke="#bbb" stroke-width="0.4"/>
+    <!-- Nozzle bottom -->
+    <polygon points="55,107 47,107 47,115 55,115" fill="#ddd" stroke="#bbb" stroke-width="0.4"/>
+
+    <!-- Exhaust flame top -->
+    <g class="flame-top">
+
+    </g>
+    <!-- Exhaust flame bottom -->
+    <g class="flame-bot">
+
+    </g>
+
+    <!-- Wing root blend -->
+    <polygon points="100,88 145,84 145,86 100,91"   fill="#e8e8e8"/>
+    <polygon points="100,112 145,116 145,114 100,109" fill="#e8e8e8"/>
+
+    <!-- Main wing top -->
+    <polygon points="105,88 175,54 181,60 135,91" fill="#ffffff" stroke="#bbb" stroke-width="0.4"/>
+    <line x1="115" y1="85" x2="171" y2="56" stroke="#ccc" stroke-width="0.5"/>
+    <line x1="127" y1="83" x2="177" y2="57" stroke="#ccc" stroke-width="0.4"/>
+
+    <!-- Main wing bottom -->
+    <polygon points="105,112 175,146 181,140 135,109" fill="#ffffff" stroke="#bbb" stroke-width="0.4"/>
+    <line x1="115" y1="115" x2="171" y2="144" stroke="#ccc" stroke-width="0.5"/>
+    <line x1="127" y1="117" x2="177" y2="143" stroke="#ccc" stroke-width="0.4"/>
+
+    <!-- Glove vane top -->
+    <polygon points="145,84 165,74 170,78 150,86" fill="#f0f0f0" stroke="#bbb" stroke-width="0.4"/>
+    <!-- Glove vane bottom -->
+    <polygon points="145,116 165,126 170,122 150,114" fill="#f0f0f0" stroke="#bbb" stroke-width="0.4"/>
+
+    <!-- Horizontal stabilizer top -->
+    <polygon points="75,88 115,74 120,78 85,89"   fill="#ececec" stroke="#bbb" stroke-width="0.4"/>
+    <!-- Horizontal stabilizer bottom -->
+    <polygon points="75,112 115,126 120,122 85,111" fill="#ececec" stroke="#bbb" stroke-width="0.4"/>
+
+    <!-- Twin tail fins -->
+    <polygon points="70,88 90,46 95,49 80,88"    fill="#f5f5f5" stroke="#aaa" stroke-width="0.5"/>
+    <polygon points="70,112 90,154 95,151 80,112" fill="#f5f5f5" stroke="#aaa" stroke-width="0.5"/>
+
+    <!-- Fuselage booms -->
+    <rect x="65" y="84"  width="100" height="10" rx="2" fill="#ffffff" stroke="#aaa" stroke-width="0.5"/>
+    <rect x="65" y="106" width="100" height="10" rx="2" fill="#ffffff" stroke="#aaa" stroke-width="0.5"/>
+    <!-- Center spine -->
+    <rect x="90" y="90" width="80" height="20" rx="1" fill="#f0f0f0" stroke="#bbb" stroke-width="0.4"/>
+
+    <!-- Forward fuselage -->
+    <polygon points="165,90 225,93 225,107 165,110" fill="#ffffff" stroke="#aaa" stroke-width="0.5"/>
+    <line x1="167" y1="90" x2="223" y2="92" stroke="#ccc" stroke-width="0.5"/>
+
+    <!-- Nose cone -->
+    <polygon points="223,93 280,99 280,101 223,107" fill="#f5f5f5" stroke="#bbb" stroke-width="0.5"/>
+    <line x1="255" y1="95" x2="279" y2="99" stroke="#ddd" stroke-width="0.4"/>
+
+    <!-- Cockpit canopy base -->
+    <rect x="190" y="87" width="38" height="8" rx="1" fill="#e0e0e0" stroke="#aaa" stroke-width="0.4"/>
+    <!-- Canopy glass -->
+    <ellipse cx="209" cy="89" rx="17" ry="4" fill="#c8d8e8" stroke="#999" stroke-width="0.5"/>
+    <line x1="209" y1="85" x2="209" y2="93" stroke="#aaa" stroke-width="0.5"/>
+    <!-- Glare highlight -->
+    <ellipse cx="203" cy="87" rx="7" ry="2" fill="#fff" opacity="0.5"/>
+
+    <!-- Air intake -->
+    <rect x="165" y="96" width="22" height="10" rx="1" fill="#d0d0d0" stroke="#aaa" stroke-width="0.4"/>
+    <line x1="167" y1="99" x2="185" y2="99" stroke="#bbb" stroke-width="0.3"/>
+
+    <!-- Nose gear fairing -->
+    <rect x="227" y="98" width="8" height="4" rx="1" fill="#e0e0e0" stroke="#bbb" stroke-width="0.3"/>
+
+    <!-- Pylons top -->
+    <rect x="140" y="81" width="16" height="3" rx="0.5" fill="#ddd" stroke="#aaa" stroke-width="0.3"/>
+    <rect x="138" y="77" width="20" height="4" rx="1"   fill="#ececec" stroke="#bbb" stroke-width="0.4"/>
+    <polygon points="158,77 165,79 158,81" fill="#ccc"/>
+
+    <!-- Pylons bottom -->
+    <rect x="140" y="116" width="16" height="3" rx="0.5" fill="#ddd" stroke="#aaa" stroke-width="0.3"/>
+    <rect x="138" y="119" width="20" height="4" rx="1"   fill="#ececec" stroke="#bbb" stroke-width="0.4"/>
+    <polygon points="158,119 165,121 158,123" fill="#ccc"/>
+
+    <!-- Gun muzzle -->
+    <rect x="249" y="98.5" width="22" height="2" rx="0.5" fill="#bbb"/>
+    <rect x="270" y="98"   width="3"  height="3" rx="0.5" fill="#aaa"/>
+
+    <!-- Panel lines -->
+    <line x1="90"  y1="100" x2="225" y2="100" stroke="#ccc" stroke-width="0.5" stroke-dasharray="6,4"/>
+    <line x1="105" y1="88"  x2="145" y2="85"  stroke="#ccc" stroke-width="0.3"/>
+    <!-- Roundel -->
+    <circle cx="145" cy="91" r="4" fill="none" stroke="#bbb" stroke-width="0.6"/>
+    <circle cx="145" cy="91" r="2" fill="#ddd"/>
+  </g>
+
+</svg>
