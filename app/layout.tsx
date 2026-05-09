@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 import SmoothScroll from "@/components/layout/SmoothScroll";
+import MusicPlayer from "@/components/layout/MusicPlayer";
 
 export default function RootLayout({
   children,
@@ -31,6 +32,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <SmoothScroll>{children}</SmoothScroll>
+        <MusicPlayer />
       </body>
     </html>
   );

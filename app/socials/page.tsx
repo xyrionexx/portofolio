@@ -158,64 +158,7 @@ export default function Socials() {
         </AnimatePresence>
       </section>
 
-      <BGMPlayer />
       <Footer />
     </main>
-  );
-}
-
-function BGMPlayer() {
-  const [playing, setPlaying] = useState(false);
-
-  useEffect(() => {
-    const audio = document.getElementById("bgm-audio") as HTMLAudioElement;
-    if (audio) {
-      audio.volume = 0.1;
-      audio.play()
-        .then(() => setPlaying(true))
-        .catch((e) => console.warn("Autoplay prevented by browser:", e));
-    }
-  }, []);
-  const toggleAudio = () => {
-    const audio = document.getElementById("bgm-audio") as HTMLAudioElement;
-    if (!audio) return;
-    if (playing) {
-      audio.pause();
-    } else {
-      audio.play().catch(() => console.warn("Audio missing"));
-    }
-    setPlaying(!playing);
-  };
-
-  return (
-    <div className="fixed bottom-8 left-8 z-50 flex items-center gap-4 group">
-      <audio id="bgm-audio" loop src="/space.mp3" />
-      <button
-        onClick={toggleAudio}
-        className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center bg-black hover:border-white transition-all duration-300 relative overflow-hidden"
-      >
-        {playing ? (
-          <div className="flex gap-1 items-end h-3">
-            <motion.div
-              animate={{ height: [4, 12, 6] }}
-              transition={{ repeat: Infinity, duration: 0.5 }}
-              className="w-1 bg-white"
-            />
-            <motion.div
-              animate={{ height: [10, 4, 12] }}
-              transition={{ repeat: Infinity, duration: 0.4 }}
-              className="w-1 bg-white"
-            />
-            <motion.div
-              animate={{ height: [6, 10, 4] }}
-              transition={{ repeat: Infinity, duration: 0.6 }}
-              className="w-1 bg-white"
-            />
-          </div>
-        ) : (
-          <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-10 border-l-white border-b-[6px] border-b-transparent ml-1" />
-        )}
-      </button>
-    </div>
   );
 }
