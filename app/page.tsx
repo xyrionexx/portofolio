@@ -51,7 +51,7 @@ export default function Home() {
           <Navbar />
 
           {/* Section 1: Hero */}
-          <section className="relative h-screen flex flex-col items-center justify-center px-6">
+          <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-24">
             <div className="absolute inset-0 pointer-events-none">
               {[...Array(25)].map((_, i) => (
                 <motion.div
@@ -163,9 +163,9 @@ export default function Home() {
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1, ease: "easeOut" }}
-                  className="absolute left-[-25%] bottom-[28%] z-10 pointer-events-none w-[150%]"
+                  className="absolute left-[-5%] md:left-[-25%] bottom-[28%] z-10 pointer-events-none w-[110%] md:w-[150%]"
                 >
-                  <h3 className="text-4xl md:text-6xl font-bold text-zinc-500/30 tracking-tighter uppercase leading-[0.85]">
+                  <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold text-zinc-500/30 tracking-tighter uppercase leading-[0.85]">
                     PROGRAMMER & <br /> DESIGNER <br /> <span>CREATIVE</span>
                   </h3>
                 </motion.div>
@@ -186,8 +186,8 @@ export default function Home() {
                       className="object-cover object-top filter grayscale contrast-125 brightness-110"
                     />
                     <div className="absolute top-0 left-0 w-full h-full bg-white mix-blend-multiply opacity-20" />
-                    <div className="absolute left-[-25%] bottom-[28%] z-30 pointer-events-none w-[150%]">
-                      <h3 className="text-4xl md:text-6xl font-bold text-black tracking-tighter uppercase leading-[0.85]">
+                    <div className="absolute left-[-5%] md:left-[-25%] bottom-[28%] z-30 pointer-events-none w-[110%] md:w-[150%]">
+                      <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold text-black tracking-tighter uppercase leading-[0.85]">
                         PROGRAMMER & <br /> DESIGNER <br />{" "}
                         <span>CREATIVE</span>
                       </h3>
@@ -259,7 +259,7 @@ export default function Home() {
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10 w-full px-6 md:px-12 mb-12">
-              <h2 className="text-6xl md:text-9xl font-black text-white tracking-tighter uppercase leading-none opacity-10">
+              <h2 className="text-5xl sm:text-6xl md:text-9xl font-black text-white tracking-tighter uppercase leading-none opacity-10">
                 TECH_OPS
               </h2>
               <div className="text-[10px] font-mono text-zinc-500 tracking-[0.5em] mt-4 uppercase">
@@ -313,7 +313,7 @@ export default function Home() {
                   <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.5em] mb-4">
                     // PROJECT_FILES
                   </h3>
-                  <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
+                  <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none break-words">
                     WORK_ARCHIVE
                   </h2>
                 </div>
@@ -655,7 +655,7 @@ function ContactSection() {
           <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.5em] mb-4">
             // TERMINAL_05
           </h3>
-          <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none mb-8">
+          <h2 className="text-3xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none mb-8 break-words">
             QUEST_INITIATION
           </h2>
         </div>
@@ -1006,7 +1006,7 @@ function RainColumn({ text, delay }: { text: string; delay: number }) {
       }}
       className="flex flex-col"
     >
-      {[...Array(10)].map((_, i) => (
+      {[...Array(4)].map((_, i) => (
         <div key={i} className="flex flex-col mb-16">
           {characters.map((char, j) => (
             <motion.span

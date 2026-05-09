@@ -205,7 +205,7 @@ function StatRow() {
   return (
     <motion.div
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 4.8 }}
-      className="w-full grid grid-cols-3 gap-2 mt-4"
+      className="w-full grid grid-cols-1 sm:grid-cols-3 gap-2 mt-4"
     >
       {[
         { val: `${proj}+`, lbl: "PROJECTS_BUILT" },
@@ -236,7 +236,7 @@ function SkillMeters() {
   return (
     <motion.div
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 5.2 }}
-      className="w-full grid grid-cols-2 gap-x-6 gap-y-3 mt-4 p-4 border border-zinc-900 bg-black/30 backdrop-blur-sm"
+      className="w-full grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mt-4 p-4 border border-zinc-900 bg-black/30 backdrop-blur-sm"
     >
       {SKILLS.map(({ label, pct }) => (
         <div key={label} className="flex flex-col gap-1.5">

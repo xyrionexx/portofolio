@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
 
         {/* Center: Mission Log (Navigation) */}
-        <div className="md:col-span-4 flex flex-col items-center md:items-start space-y-8">
+        <div className="md:col-span-4 flex flex-col md:items-start space-y-8">
           <div className="space-y-4">
             <h5 className="text-[10px] text-zinc-500 uppercase tracking-[0.5em] font-bold border-b border-zinc-900 pb-2">MISSION_LOG</h5>
             <div className="flex flex-col gap-3">
@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
 
         {/* Right: Actions & Respawn */}
-        <div className="md:col-span-4 flex flex-col items-center md:items-end space-y-12">
+        <div className="md:col-span-4 flex flex-col md:items-end space-y-12">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

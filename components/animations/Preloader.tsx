@@ -18,7 +18,8 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
           setProgress(Math.round(this.progress() * 100));
         },
         onComplete: () => {
-          setReady(true);
+          setProgress(100);
+          setTimeout(() => setReady(true), 200);
         }
       });
 
@@ -53,10 +54,10 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         {[...Array(5)].map((_, i) => (
           <div 
             key={i}
-            className={`w-4 h-4 border-2 border-white ${progress > (i + 1) * 20 ? 'bg-white' : 'bg-transparent'} transition-colors duration-200`}
+            className={`w-4 h-4 border-2 border-white ${progress >= (i + 1) * 20 ? 'bg-white' : 'bg-transparent'} transition-colors duration-200`}
             style={{ 
                 imageRendering: 'pixelated',
-                boxShadow: progress > (i + 1) * 20 ? '0 0 10px rgba(255,255,255,0.5)' : 'none'
+                boxShadow: progress >= (i + 1) * 20 ? '0 0 10px rgba(255,255,255,0.5)' : 'none'
             }}
           />
         ))}

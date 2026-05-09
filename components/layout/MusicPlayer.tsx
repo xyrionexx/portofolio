@@ -11,9 +11,10 @@ export default function MusicPlayer() {
     // Check for "hasLoaded" to start playing
     const checkStatus = () => {
       const hasLoaded = sessionStorage.getItem("hasLoaded");
+      const isManuallyPaused = sessionStorage.getItem("audioPaused") === "true";
       const audio = audioRef.current;
       
-      if (hasLoaded === "true" && audio) {
+      if (hasLoaded === "true" && audio && audio.paused && !isManuallyPaused) {
         audio.volume = 0.1;
         audio.play()
           .then(() => setPlaying(true))
@@ -41,8 +42,10 @@ export default function MusicPlayer() {
     
     if (playing) {
       audio.pause();
+      sessionStorage.setItem("audioPaused", "true");
     } else {
       audio.play().catch((e) => console.warn("Playback failed", e));
+      sessionStorage.setItem("audioPaused", "false");
     }
     setPlaying(!playing);
   };
