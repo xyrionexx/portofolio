@@ -151,8 +151,8 @@ export default function Home() {
                       PROG_DESIGNER // ARCHITECT
                     </div>
                     <p className="text-[10px] text-zinc-500 uppercase tracking-widest leading-relaxed max-w-[250px]">
-                      CREATING IMMERSIVE DIGITAL EXPERIENCES THROUGH THE LENS OF
-                      MODERN GAME DESIGN.
+                      CRAFTING MODERN AND IMMERSIVE DIGITAL EXPERIENCES WITH
+                      CREATIVE VISUAL DESIGN
                     </p>
                   </div>
                 </motion.div>
@@ -207,7 +207,7 @@ export default function Home() {
                     \\
                   </div>
                   <p className="text-[9px] text-zinc-500 leading-relaxed tracking-widest uppercase max-w-sm ml-auto mt-0 md:mt-72">
-                    <DecryptedText text="MERGING TECHNICAL PRECISION WITH ARTISTIC VISION TO BUILD THE FUTURE OF THE WEB—CRAFTING SEAMLESS, INTELLIGENT, AND VISUALLY COMPELLING DIGITAL EXPERIENCES THAT NOT ONLY FUNCTION FLAWLESSLY BUT ALSO INSPIRE, ENGAGE, AND REDEFINE HOW USERS INTERACT WITH TECHNOLOGY IN A RAPIDLY EVOLVING DIGITAL WORLD." />
+                    <DecryptedText text="FULL-STACK WEB DEVELOPER SPECIALIZED IN LARAVEL, ELYSIA, NEXT.JS, AND SVELTE WITH EXPERIENCE IN GITHUB & GITLAB WORKFLOWS. CREATIVE IN BUILDING MODERN DARK MODE INTERFACES, IMMERSIVE WEB EXPERIENCES, AND MOBILE APPS USING ANDROID NATIVE & REACT NATIVE." />
                   </p>
 
                   <Link
@@ -446,7 +446,7 @@ function DecryptedText({ text, delay = 0 }: { text: string; delay?: number }) {
     if (!isInView) return; // Wait until component is in viewport
 
     let iteration = 0;
-    const duration = 20; // Even faster: 2.5s total for ~120 chars
+    const duration = 15; // Even faster: 2.5s total for ~120 chars
 
     const timeout = setTimeout(() => {
       const interval = setInterval(() => {
@@ -686,8 +686,8 @@ function ContactSection() {
               <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
                 Direct_Channel
               </span>
-              <a 
-                href="mailto:aditcareer12370@gmail.com" 
+              <a
+                href="mailto:aditcareer12370@gmail.com"
                 className="text-xs font-mono text-white/50 hover:text-white transition-colors tracking-widest"
               >
                 aditcareer12370@gmail.com

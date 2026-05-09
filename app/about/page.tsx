@@ -19,16 +19,20 @@ export default function AboutPage() {
       <section className="relative min-h-screen pt-32 pb-20 px-6 md:px-12 flex flex-col z-10">
         <div className="max-w-7xl mx-auto w-full">
           {/* Back Button */}
-          <Link href="/#about" className="inline-flex items-center gap-2 text-zinc-500 hover:text-white transition-colors font-mono text-xs uppercase tracking-widest mb-12 group">
-            <span className="group-hover:-translate-x-1 transition-transform">←</span>
+          <Link
+            href="/#about"
+            className="inline-flex items-center gap-2 text-zinc-500 hover:text-white transition-colors font-mono text-xs uppercase tracking-widest mb-12 group"
+          >
+            <span className="group-hover:-translate-x-1 transition-transform">
+              ←
+            </span>
             Return_To_Base
           </Link>
 
           {/* Content Grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-            
             {/* Left Content */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -45,7 +49,8 @@ export default function AboutPage() {
                   ABOUT_ME
                 </h1>
                 <p className="text-sm md:text-lg text-zinc-500 uppercase tracking-widest max-w-xl font-mono mt-6 leading-relaxed">
-                  I am a passionate Programmer and Designer dedicated to building immersive digital experiences that blur the line between technology and art.
+                  I build modern web experiences with a focus on clean
+                  development, creative design, and immersive user interaction.
                 </p>
               </div>
 
@@ -56,7 +61,27 @@ export default function AboutPage() {
                     Origin_Story
                   </h4>
                   <p className="text-zinc-400 leading-relaxed font-mono text-sm">
-                    Berawal dari ketertarikan mendalam pada dunia pemrograman dan desain visual, saya telah mendedikasikan diri untuk memahami bagaimana teknologi dapat digunakan untuk menciptakan solusi yang tidak hanya fungsional, tetapi juga memberikan pengalaman estetika yang luar biasa. Pendekatan saya selalu menggabungkan logika komputasional dengan kreativitas tanpa batas.
+                    Saya dulunya tertarik di bidang ini karena saya seperti
+                    diberi pemahaman tentang pembuatan web dan juga diberikan
+                    semacam learning management di Dicoding . Awalnya saya
+                    memang leha-leha dan belum terlalu serius, tetapi
+                    lama-kelamaan saya mulai tertarik dan mendalami bidang ini
+                    lebih jauh. Setelah itu saya masuk SMK di Bandung, yaitu
+                    SMKN 13 Bandung, dan mulai lebih menekuni dunia teknologi
+                    serta web development.
+                    <br />
+                    <br />
+                    Tujuan saya adalah untuk terus berkembang di bidang
+                    teknologi, khususnya web development dan AI engineering.
+                    Saya ingin membangun aplikasi dan pengalaman digital yang
+                    tidak hanya modern dan menarik secara visual, tetapi juga
+                    bermanfaat, aman, dan nyaman digunakan. Saya percaya bahwa
+                    kombinasi antara kreativitas desain dan kemampuan
+                    programming dapat menciptakan teknologi yang lebih hidup dan
+                    mudah dinikmati oleh banyak orang. Selain itu, saya juga
+                    memiliki tujuan pribadi untuk terus meningkatkan kemampuan
+                    saya hingga bisa meraih prestasi akademik terbaik dan lulus
+                    dengan predikat cumlaude.
                   </p>
                 </div>
                 <div>
@@ -64,14 +89,20 @@ export default function AboutPage() {
                     Mission_Objective
                   </h4>
                   <p className="text-zinc-400 leading-relaxed font-mono text-sm">
-                    Tujuan saya adalah untuk terus mendorong batas inovasi di bidang pengembangan web dan perangkat lunak. Saya percaya bahwa antarmuka yang dirancang dengan baik dapat meningkatkan interaksi manusia dengan teknologi secara signifikan. Setiap baris kode dan setiap elemen visual yang saya buat ditujukan untuk membangun ekosistem digital yang kuat, aman, dan indah.
+                    Tujuan saya adalah untuk terus mendorong batas inovasi di
+                    bidang pengembangan web dan perangkat lunak. Saya percaya
+                    bahwa antarmuka yang dirancang dengan baik dapat
+                    meningkatkan interaksi manusia dengan teknologi secara
+                    signifikan. Setiap baris kode dan setiap elemen visual yang
+                    saya buat ditujukan untuk membangun ekosistem digital yang
+                    kuat, aman, dan indah.
                   </p>
                 </div>
               </div>
             </motion.div>
 
             {/* Right Content / Image */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -82,7 +113,7 @@ export default function AboutPage() {
                 <div className="absolute -top-1 -right-1 w-4 h-4 border-r border-t border-zinc-500 group-hover:border-white transition-colors" />
                 <div className="absolute -bottom-1 -left-1 w-4 h-4 border-l border-b border-zinc-500 group-hover:border-white transition-colors" />
                 <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r border-b border-zinc-500 group-hover:border-white transition-colors" />
-                
+
                 <div className="relative w-full h-full overflow-hidden">
                   <Image
                     src="/person.jpeg"
@@ -98,23 +129,37 @@ export default function AboutPage() {
               {/* Stats HUD */}
               <div className="mt-8 border border-zinc-900 p-6 grid grid-cols-2 gap-4">
                 <div>
-                  <h5 className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mb-1">Status</h5>
+                  <h5 className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mb-1">
+                    Status
+                  </h5>
                   <p className="text-xs text-green-500 uppercase tracking-widest flex items-center gap-2">
                     <span className="w-1 h-1 bg-green-500 rounded-full animate-pulse" />
                     ONLINE
                   </p>
                 </div>
                 <div>
-                  <h5 className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mb-1">Class</h5>
-                  <p className="text-xs text-white uppercase tracking-widest">Architect</p>
+                  <h5 className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mb-1">
+                    Class
+                  </h5>
+                  <p className="text-xs text-white uppercase tracking-widest">
+                    Architect
+                  </p>
                 </div>
                 <div>
-                  <h5 className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mb-1">XP Level</h5>
-                  <p className="text-xs text-white uppercase tracking-widest">MAX</p>
+                  <h5 className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mb-1">
+                    XP Level
+                  </h5>
+                  <p className="text-xs text-white uppercase tracking-widest">
+                    MAX
+                  </p>
                 </div>
                 <div>
-                  <h5 className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mb-1">Base</h5>
-                  <p className="text-xs text-white uppercase tracking-widest">IDN</p>
+                  <h5 className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mb-1">
+                    Base
+                  </h5>
+                  <p className="text-xs text-white uppercase tracking-widest">
+                    IDN
+                  </p>
                 </div>
               </div>
             </motion.div>
