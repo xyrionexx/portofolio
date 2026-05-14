@@ -375,10 +375,13 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Section 5: Social Matrix */}
+          {/* Section 5: Certificates */}
+          <CertificatesSection />
+
+          {/* Section 6: Social Matrix */}
           <SocialSection />
 
-          {/* Section 6: Contact / Quest Initiation */}
+          {/* Section 7: Contact / Quest Initiation */}
           <ContactSection />
 
           {/* Footer Section */}
@@ -1027,5 +1030,129 @@ function RainColumn({ text, delay }: { text: string; delay: number }) {
         </div>
       ))}
     </motion.div>
+  );
+}
+
+function CertificatesSection() {
+  const certificates = [
+    {
+      id: "CERT_01",
+      name: "AWS Course Completion",
+      issuer: "AWS",
+      file: "/sertifikat/134_3_6077304_1729645829_AWS Course Completion Certificate.pdf",
+    },
+    {
+      id: "CERT_02",
+      name: "AWS Course Completion",
+      issuer: "AWS",
+      file: "/sertifikat/156_3_6077304_1729645833_AWS Course Completion Certificate.pdf",
+    },
+    {
+      id: "CERT_03",
+      name: "Dicoding Front End",
+      issuer: "Dicoding",
+      file: "/sertifikat/sertifikat_course_dicoding_front end.pdf",
+    },
+    {
+      id: "CERT_04",
+      name: "Invovest Certificate",
+      issuer: "Invovest",
+      file: "/sertifikat/sertifikat invovest.pdf",
+    },
+    {
+      id: "CERT_05",
+      name: "JHIC Certificate",
+      issuer: "JHIC",
+      file: "/sertifikat/sertifikat-jhic.pdf",
+    },
+    {
+      id: "CERT_06",
+      name: "Belajar Dasar Cloud dan AI",
+      issuer: "Dicoding",
+      file: "/sertifikat/sertifikat_course_251_2960915_250525181215.pdf",
+    },
+    {
+      id: "CERT_07",
+      name: "Belajar AI",
+      issuer: "Dicoding",
+      file: "/sertifikat/sertifikat_course_653_2960915_021225100233.pdf",
+    },
+    {
+      id: "CERT_08",
+      name: "Belajar Dasar Kotlin",
+      issuer: "Dicoding",
+      file: "/sertifikat/sertifikat_course_80_2960915_121225113141.pdf",
+    },
+  ];
+
+  return (
+    <section
+      id="certificates"
+      className="relative min-h-screen bg-black py-32 px-6 md:px-12 border-t border-zinc-900"
+    >
+      <div className="max-w-7xl mx-auto">
+        <div className="flex justify-between items-end mb-24">
+          <div>
+            <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.5em] mb-4">
+              // CREDENTIAL_RECORDS
+            </h3>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none break-words">
+              CERTIFICATES
+            </h2>
+          </div>
+          <div className="text-[10px] font-mono text-zinc-600 text-right hidden md:block">
+            STATUS: VERIFIED
+            <br />
+            TOTAL_RECORDS: {certificates.length < 10 ? `0${certificates.length}` : certificates.length}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {certificates.map((cert, i) => (
+            <motion.a
+              href={cert.file}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={cert.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="group relative cursor-pointer block bg-zinc-950 border border-zinc-900 p-6 hover:border-white transition-colors duration-500"
+            >
+              {/* Corner accents */}
+              <div className="absolute top-0 left-0 w-2 h-2 border-l border-t border-zinc-500 group-hover:border-white transition-colors" />
+              <div className="absolute top-0 right-0 w-2 h-2 border-r border-t border-zinc-500 group-hover:border-white transition-colors" />
+              <div className="absolute bottom-0 left-0 w-2 h-2 border-l border-b border-zinc-500 group-hover:border-white transition-colors" />
+              <div className="absolute bottom-0 right-0 w-2 h-2 border-r border-b border-zinc-500 group-hover:border-white transition-colors" />
+
+              <div className="flex items-start justify-between mb-8">
+                <div className="w-10 h-10 bg-zinc-900 flex items-center justify-center border border-zinc-800 group-hover:bg-white group-hover:text-black transition-all">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <div className="text-[10px] font-mono text-zinc-500 group-hover:text-white transition-colors">
+                  {cert.id}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-bold text-white tracking-tighter uppercase mb-2 group-hover:tracking-widest transition-all duration-500 line-clamp-2">
+                  {cert.name}
+                </h4>
+                <p className="text-[10px] text-zinc-500 uppercase tracking-widest font-mono">
+                  ISSUER // {cert.issuer}
+                </p>
+              </div>
+
+              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="text-white text-xs">↗</span>
+              </div>
+            </motion.a>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
