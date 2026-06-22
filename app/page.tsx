@@ -313,7 +313,7 @@ export default function Home() {
                   <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.5em] mb-4">
                     // PROJECT_FILES
                   </h3>
-                  <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none break-words">
+                  <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none wrap-break-word">
                     WORK_ARCHIVE
                   </h2>
                 </div>
@@ -658,7 +658,7 @@ function ContactSection() {
           <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.5em] mb-4">
             // TERMINAL_05
           </h3>
-          <h2 className="text-3xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none mb-8 break-words">
+          <h2 className="text-3xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none mb-8 wrap-break-word">
             QUEST_INITIATION
           </h2>
         </div>
@@ -1034,69 +1034,164 @@ function RainColumn({ text, delay }: { text: string; delay: number }) {
 }
 
 function CertificatesSection() {
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [activeCert, setActiveCert] = useState<any | null>(null);
+
   const certificates = [
+    {
+      id: "CERT_09",
+      name: "Juara 2 LKS AI Tingkat Provinsi Jawa Barat",
+      issuer: "Dinas Pendidikan Provinsi Jawa Barat",
+      file: "/sertifikat/BERITA ACARA LKS AI JAWA BARAT.pdf",
+      category: "competition",
+      badge: "PROVINCIAL WINNER",
+      color: "amber",
+    },
+    {
+      id: "CERT_10",
+      name: "Juara Lomba AI Tingkat Kota",
+      issuer: "Dinas Pendidikan Kota",
+      file: "/sertifikat/jUARA_LOMBA_TINGKAT_KOTA_AI.jpeg",
+      category: "competition",
+      badge: "CITY CHAMPION",
+      color: "amber",
+    },
     {
       id: "CERT_01",
       name: "AWS Course Completion",
       issuer: "AWS",
       file: "/sertifikat/134_3_6077304_1729645829_AWS Course Completion Certificate.pdf",
+      category: "professional",
+      badge: "PROFESSIONAL",
+      color: "cyan",
     },
     {
       id: "CERT_02",
       name: "AWS Course Completion",
       issuer: "AWS",
       file: "/sertifikat/156_3_6077304_1729645833_AWS Course Completion Certificate.pdf",
+      category: "professional",
+      badge: "PROFESSIONAL",
+      color: "cyan",
     },
     {
       id: "CERT_03",
       name: "Dicoding Front End",
       issuer: "Dicoding",
       file: "/sertifikat/sertifikat_course_dicoding_front end.pdf",
+      category: "course",
+      badge: "COURSE CERT",
+      color: "purple",
     },
     {
       id: "CERT_04",
       name: "Invovest Certificate",
       issuer: "Invovest",
       file: "/sertifikat/sertifikat invovest.pdf",
+      category: "professional",
+      badge: "PROFESSIONAL",
+      color: "cyan",
     },
     {
       id: "CERT_05",
       name: "JHIC Certificate",
       issuer: "JHIC",
       file: "/sertifikat/sertifikat-jhic.pdf",
+      category: "professional",
+      badge: "PROFESSIONAL",
+      color: "cyan",
     },
     {
       id: "CERT_06",
       name: "Belajar Dasar Cloud dan AI",
       issuer: "Dicoding",
       file: "/sertifikat/sertifikat_course_251_2960915_250525181215.pdf",
+      category: "course",
+      badge: "COURSE CERT",
+      color: "purple",
     },
     {
       id: "CERT_07",
       name: "Belajar AI",
       issuer: "Dicoding",
       file: "/sertifikat/sertifikat_course_653_2960915_021225100233.pdf",
+      category: "course",
+      badge: "COURSE CERT",
+      color: "purple",
     },
     {
       id: "CERT_08",
       name: "Belajar Dasar Kotlin",
       issuer: "Dicoding",
       file: "/sertifikat/sertifikat_course_80_2960915_121225113141.pdf",
+      category: "course",
+      badge: "COURSE CERT",
+      color: "purple",
     },
   ];
+
+  const categories = [
+    { id: "all", label: "ALL_RECORDS" },
+    { id: "competition", label: "COMPETITIONS" },
+    { id: "professional", label: "PROFESSIONAL_CREDENTIALS" },
+    { id: "course", label: "TRAINING_COURSES" },
+  ];
+
+  const filteredCertificates = certificates.filter(
+    (cert) => selectedCategory === "all" || cert.category === selectedCategory
+  );
+
+  const handleCardClick = (e: React.MouseEvent, cert: any) => {
+    e.preventDefault();
+    setActiveCert(cert);
+  };
+
+  // Get color configurations based on category
+  const getColorStyles = (color: string) => {
+    switch (color) {
+      case "amber":
+        return {
+          glow: "bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.08)_0%,transparent_70%)]",
+          border: "hover:border-amber-500/50",
+          text: "text-amber-400 border-amber-900/40 bg-amber-950/20",
+          accent: "border-amber-500/30",
+        };
+      case "cyan":
+        return {
+          glow: "bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.08)_0%,transparent_70%)]",
+          border: "hover:border-cyan-500/50",
+          text: "text-cyan-400 border-cyan-900/40 bg-cyan-950/20",
+          accent: "border-cyan-500/30",
+        };
+      case "purple":
+        default:
+        return {
+          glow: "bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.08)_0%,transparent_70%)]",
+          border: "hover:border-purple-500/50",
+          text: "text-purple-400 border-purple-900/40 bg-purple-950/20",
+          accent: "border-purple-500/30",
+        };
+    }
+  };
 
   return (
     <section
       id="certificates"
       className="relative min-h-screen bg-black py-32 px-6 md:px-12 border-t border-zinc-900"
     >
+      {/* Background HUD Decor */}
+      <div className="absolute inset-0 pointer-events-none opacity-5">
+        <div className="absolute top-1/4 left-10 w-48 h-48 border border-dashed border-zinc-800 rounded-full animate-spin [animation-duration:120s]" />
+        <div className="absolute bottom-1/4 right-10 w-72 h-72 border border-dashed border-zinc-800 rounded-full animate-spin [animation-duration:180s]" />
+      </div>
+
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-end mb-24">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16">
           <div>
             <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.5em] mb-4">
               // CREDENTIAL_RECORDS
             </h3>
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none break-words">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none wrap-break-word">
               CERTIFICATES
             </h2>
           </div>
@@ -1107,52 +1202,192 @@ function CertificatesSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {certificates.map((cert, i) => (
-            <motion.a
-              href={cert.file}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={cert.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group relative cursor-pointer block bg-zinc-950 border border-zinc-900 p-6 hover:border-white transition-colors duration-500"
+        {/* Filter Navigation */}
+        <div className="flex flex-wrap gap-2 md:gap-4 mb-12 border-b border-zinc-900 pb-6">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setSelectedCategory(cat.id)}
+              className={`px-4 py-2 text-[10px] md:text-xs font-mono uppercase transition-all relative cursor-pointer border ${
+                selectedCategory === cat.id
+                  ? "bg-white text-black border-white font-bold"
+                  : "bg-transparent text-zinc-500 border-zinc-900 hover:text-white hover:border-zinc-700"
+              }`}
             >
-              {/* Corner accents */}
-              <div className="absolute top-0 left-0 w-2 h-2 border-l border-t border-zinc-500 group-hover:border-white transition-colors" />
-              <div className="absolute top-0 right-0 w-2 h-2 border-r border-t border-zinc-500 group-hover:border-white transition-colors" />
-              <div className="absolute bottom-0 left-0 w-2 h-2 border-l border-b border-zinc-500 group-hover:border-white transition-colors" />
-              <div className="absolute bottom-0 right-0 w-2 h-2 border-r border-b border-zinc-500 group-hover:border-white transition-colors" />
-
-              <div className="flex items-start justify-between mb-8">
-                <div className="w-10 h-10 bg-zinc-900 flex items-center justify-center border border-zinc-800 group-hover:bg-white group-hover:text-black transition-all">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <div className="text-[10px] font-mono text-zinc-500 group-hover:text-white transition-colors">
-                  {cert.id}
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-lg font-bold text-white tracking-tighter uppercase mb-2 group-hover:tracking-widest transition-all duration-500 line-clamp-2">
-                  {cert.name}
-                </h4>
-                <p className="text-[10px] text-zinc-500 uppercase tracking-widest font-mono">
-                  ISSUER // {cert.issuer}
-                </p>
-              </div>
-
-              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-white text-xs">↗</span>
-              </div>
-            </motion.a>
+              [ {cat.label} ]
+            </button>
           ))}
         </div>
+
+        {/* Dynamic Grid Layout */}
+        <motion.div
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredCertificates.map((cert, i) => {
+              const styles = getColorStyles(cert.color);
+              return (
+                <motion.div
+                  layout
+                  key={cert.id}
+                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: 10 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                >
+                  <a
+                    href={cert.file}
+                    onClick={(e) => handleCardClick(e, cert)}
+                    className={`group relative cursor-pointer block bg-zinc-950 border border-zinc-900 p-6 transition-all duration-500 overflow-hidden ${styles.border}`}
+                  >
+                    {/* Radial Background Hover Glow */}
+                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0 ${styles.glow}`} />
+
+                    {/* Corner accents */}
+                    <div className={`absolute top-0 left-0 w-2 h-2 border-l border-t border-zinc-800 group-hover:border-white transition-colors duration-300 z-10`} />
+                    <div className={`absolute top-0 right-0 w-2 h-2 border-r border-t border-zinc-800 group-hover:border-white transition-colors duration-300 z-10`} />
+                    <div className={`absolute bottom-0 left-0 w-2 h-2 border-l border-b border-zinc-800 group-hover:border-white transition-colors duration-300 z-10`} />
+                    <div className={`absolute bottom-0 right-0 w-2 h-2 border-r border-b border-zinc-800 group-hover:border-white transition-colors duration-300 z-10`} />
+
+                    <div className="relative z-10 flex items-start justify-between mb-8">
+                      <div className="w-10 h-10 bg-zinc-900 flex items-center justify-center border border-zinc-850 group-hover:bg-white group-hover:text-black transition-all">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5" strokeWidth="2">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                      </div>
+                      <div className="flex flex-col items-end gap-1">
+                        <span className="text-[10px] font-mono text-zinc-500 group-hover:text-white transition-colors duration-300">
+                          {cert.id}
+                        </span>
+                        <span className={`text-[8px] font-mono font-bold tracking-widest px-2 py-0.5 border uppercase ${styles.text}`}>
+                          {cert.badge}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="relative z-10">
+                      <h4 className="text-lg font-bold text-white tracking-tighter uppercase mb-2 group-hover:tracking-widest transition-all duration-500 line-clamp-2">
+                        {cert.name}
+                      </h4>
+                      <p className="text-[10px] text-zinc-500 uppercase tracking-widest font-mono">
+                        ISSUER // {cert.issuer}
+                      </p>
+                    </div>
+
+                    <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
+                      <span className="text-white text-xs">↗</span>
+                    </div>
+                  </a>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </motion.div>
       </div>
+
+      {/* Lightbox / Preview Modal Overlay */}
+      <AnimatePresence>
+        {activeCert && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+            onClick={() => setActiveCert(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, y: 20, rotateX: 5 }}
+              animate={{ scale: 1, y: 0, rotateX: 0 }}
+              exit={{ scale: 0.95, y: 20, rotateX: 5 }}
+              transition={{ type: "spring", duration: 0.5, bounce: 0.15 }}
+              className="relative w-full max-w-4xl bg-zinc-950 border border-zinc-800 p-1 shadow-[0_0_50px_rgba(255,255,255,0.05)] text-white"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Corner Accents */}
+              <div className="absolute -top-1 -left-1 w-8 h-8 border-l-2 border-t-2 border-white z-25" />
+              <div className="absolute -top-1 -right-1 w-8 h-8 border-r-2 border-t-2 border-white z-25" />
+              <div className="absolute -bottom-1 -left-1 w-8 h-8 border-l-2 border-b-2 border-white z-25" />
+              <div className="absolute -bottom-1 -right-1 w-8 h-8 border-r-2 border-b-2 border-white z-25" />
+
+              <div className="bg-black border border-zinc-900 p-6 md:p-8">
+                {/* HUD Header */}
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 border-b border-zinc-900 pb-4">
+                  <div className="flex items-center gap-3">
+                    <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse" />
+                    <div>
+                      <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block">
+                        SYSTEM_FILE_DECRYPTED // ID: {activeCert.id}
+                      </span>
+                      <h3 className="text-xl font-bold uppercase tracking-tighter mt-0.5 text-white">
+                        {activeCert.name}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="text-left sm:text-right">
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block">
+                      ISSUER_NODE
+                    </span>
+                    <span className="text-xs font-mono text-white tracking-widest font-bold uppercase">
+                      {activeCert.issuer}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Main Viewport */}
+                <div className="relative aspect-video w-full bg-zinc-950 border border-zinc-900 flex items-center justify-center overflow-hidden min-h-[350px] md:min-h-[500px]">
+                  {/* Grid overlay for cyberpunk aesthetic */}
+                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#0d0d0d_1px,transparent_1px),linear-gradient(to_bottom,#0d0d0d_1px,transparent_1px)] bg-size-[32px_32px] pointer-events-none" />
+
+                  {/* Document Preview */}
+                  {activeCert.file.endsWith(".pdf") ? (
+                    <iframe
+                      src={`${activeCert.file}#toolbar=0&navpanes=0`}
+                      className="w-full h-full border-none relative z-10"
+                      title={activeCert.name}
+                    />
+                  ) : (
+                    <img
+                      src={activeCert.file}
+                      alt={activeCert.name}
+                      className="max-h-[75vh] max-w-full object-contain relative z-10 p-2"
+                    />
+                  )}
+                </div>
+
+                {/* HUD Footer Actions */}
+                <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6 border-t border-zinc-900 pt-4 font-mono">
+                  <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+                    <a
+                      href={activeCert.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 sm:flex-none text-center px-4 py-2 border border-zinc-850 hover:border-zinc-500 text-[10px] text-zinc-400 hover:text-white transition-all uppercase whitespace-nowrap"
+                    >
+                      [ OPEN_RAW_NODE ]
+                    </a>
+                    <a
+                      href={activeCert.file}
+                      download
+                      className="flex-1 sm:flex-none text-center px-4 py-2 border border-zinc-850 hover:border-zinc-500 text-[10px] text-zinc-400 hover:text-white transition-all uppercase whitespace-nowrap"
+                    >
+                      [ DOWNLOAD_LOCAL ]
+                    </a>
+                  </div>
+
+                  <button
+                    onClick={() => setActiveCert(null)}
+                    className="w-full sm:w-auto px-6 py-2 bg-white text-black text-[10px] font-bold tracking-widest hover:bg-zinc-200 transition-colors uppercase text-center cursor-pointer"
+                  >
+                    [ TERMINATE_PREVIEW ]
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
