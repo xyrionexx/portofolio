@@ -333,6 +333,13 @@ export default function Home() {
                     image: "/Learnkuy.jpeg",
                     link: "/work/learnkuy",
                   },
+                  {
+                    id: "02",
+                    name: "ECOSORT",
+                    type: "AI Waste Manager APK",
+                    image: "/ecosort_icon.png",
+                    link: "/work/ecosort",
+                  },
                 ].map((project, i) => (
                   <motion.a
                     href={project.link}
@@ -1042,7 +1049,7 @@ function CertificatesSection() {
       id: "CERT_09",
       name: "Juara 2 LKS AI Tingkat Provinsi Jawa Barat",
       issuer: "Dinas Pendidikan Provinsi Jawa Barat",
-      file: "/sertifikat/BERITA ACARA LKS AI JAWA BARAT.pdf",
+      file: "/sertifikat/19. Kota Bandung_SERTIFIKAT_LKS Tingkat Provinsi 2026_69-56.pdf",
       category: "competition",
       badge: "PROVINCIAL WINNER",
       color: "amber",
